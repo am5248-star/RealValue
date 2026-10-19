@@ -1,0 +1,48 @@
+{
+  "rows": {
+    "train": 4976,
+    "calibration": 1066,
+    "test": 1067
+  },
+  "split_dates": {
+    "train_end": "2011-06-12",
+    "calibration_end": "2012-03-22",
+    "test_start": "2012-03-23",
+    "test_end": "2015-02-17"
+  },
+  "selected_model": "xgboost",
+  "model_comparison": {
+    "ridge": {
+      "test_mae_inr": 690719.1760371604,
+      "test_rmse_inr": 921541.940048918,
+      "test_mape": 0.05288265902946047,
+      "calibration_absolute_residual_quantile_inr": 1402371.2748698741,
+      "test_interval_coverage": 0.8940955951265229,
+      "test_mean_interval_width_inr": 2804742.5497397482
+    },
+    "random_forest": {
+      "test_mae_inr": 364377.5135219171,
+      "test_rmse_inr": 468076.8265866329,
+      "test_mape": 0.0311497073151503,
+      "calibration_absolute_residual_quantile_inr": 861410.4529894199,
+      "test_interval_coverage": 0.936269915651359,
+      "test_mean_interval_width_inr": 1722820.9059788398
+    },
+    "xgboost": {
+      "test_mae_inr": 151739.33880037488,
+      "test_rmse_inr": 215754.34086244812,
+      "test_mape": 0.012243943834113204,
+      "calibration_absolute_residual_quantile_inr": 317302.0,
+      "test_interval_coverage": 0.8903467666354264,
+      "test_mean_interval_width_inr": 634604.0
+    }
+  },
+  "median_baseline_mae_inr": 3161303.2216494847,
+  "median_baseline_rmse_inr": 4281173.972535237,
+  "interval_nominal_coverage": 0.9,
+  "limitations": [
+    "Historical chronological split; drift can invalidate exchangeability",
+    "No geography beyond locality labels",
+    "Review rules are not calibrated probabilities"
+  ]
+}
